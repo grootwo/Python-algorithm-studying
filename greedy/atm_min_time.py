@@ -1,4 +1,5 @@
-# 11399
+# 11399소
+# ATM
 
 n = int(input())
 times = list(map(int, input().split()))
