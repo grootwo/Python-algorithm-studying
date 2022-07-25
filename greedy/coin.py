@@ -11,8 +11,12 @@ for _ in range(n):
 count = 0
 leftover = price
 
-while leftover > 0:
+if n == 1:
+    count += leftover // values[0]
+else:
     for i in range(1, n):
+        if leftover <= 0:
+            break
         count += leftover // values[n - i]
         leftover = leftover % values[n - i]
 
