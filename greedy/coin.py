@@ -3,21 +3,20 @@
 
 import sys
 
-n, price = map(int, input().split())
+n, leftover = map(int, input().split())
 values = []
 for _ in range(n):
     values.append(int(sys.stdin.readline()))
 
 count = 0
-leftover = price
-
-if n == 1:
-    count += leftover // values[0]
-else:
-    for i in range(1, n):
-        if leftover <= 0:
-            break
-        count += leftover // values[n - i]
-        leftover = leftover % values[n - i]
+for i in reversed(range(n)):
+    count += leftover // values[i]
+    leftover = leftover % values[i]
 
 print(count)
+
+# for i in range(1, n):
+#     if leftover <= 0:
+#         break
+#     count += leftover // values[n - i]
+#     leftover = leftover % values[n - i]
