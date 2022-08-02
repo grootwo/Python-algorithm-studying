@@ -33,6 +33,11 @@ def bfs(e, r, visited):
     visited[r] = 1
     print(r, end='')
     queue = deque(e[r])
+    # 자신과 연결된 모든 방문 안된 노드를 큐에 쓰고 팝(출력)
+    r = queue.popleft()
+    if visited[r] == 0:
+        print(r, end='')
+
 
 
 dfs(graph, r, visited)
