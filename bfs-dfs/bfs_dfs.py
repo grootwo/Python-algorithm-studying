@@ -8,7 +8,8 @@ from collections import deque
 # 정점, 간선, 시작 정점
 n, m, r = map(int, sys.stdin.readline().split())
 
-visited = [0] * (n + 1)
+visited_dfs = [0] * (n + 1)
+visited_bfs = [0] * (n + 1)
 graph = [[] for _ in range(n + 1)]
 
 for _ in range(m):
@@ -31,14 +32,17 @@ def dfs(e, r, visited):
 
 def bfs(e, r, visited):
     visited[r] = 1
-    print(r, end='')
-    queue = deque(e[r])
-    # 자신과 연결된 모든 방문 안된 노드를 큐에 쓰고 팝(출력)
-    r = queue.popleft()
-    if visited[r] == 0:
-        print(r, end='')
+    queue = deque([r])
+    # 자신과 연결된 모든 방문 노드를 큐에 쓰고 팝
+    while queue:
+        r = queue.popleft()
+        print(r, end=' ')
+        for i in e[r]:
+            if visited[i] == 0:
+                visited[i] = 1
+                queue.append(i)
 
 
-
-dfs(graph, r, visited)
+dfs(graph, r, visited_dfs)
 print()
+bfs(graph, r, visited_bfs)
