@@ -19,7 +19,8 @@ minus = False
 for j in range(1, len(nums)):
     if signs[j - 1] == '-':
         minus = True
-    if minus == True # minus 나오는 순간 뒤의 수(절댓값) 다 빼주면 된다
+    # minus 나오는 순간 뒤의 수(절댓값) 다 빼주면 된다
+    if minus == True
         result -= nums[j]
     else:
         result += nums[j]
