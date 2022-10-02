@@ -17,7 +17,7 @@ visited = [0] * (n + 1)
 
 # bfs
 def bfs(graph, r, visited):
-    queue = deque([r])  # [r]이 뭔가
+    queue = deque([r])
     visited[r] = 1  # 첫번째 방문 정점
     count = 2  # 두번째 방문 정점
     while queue:
