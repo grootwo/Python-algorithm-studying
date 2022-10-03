@@ -1,5 +1,7 @@
 # 2178
 # 미로 탐색
+# 참고(https://bmy1320.tistory.com/entry/%EB%B0%B1%EC%A4%80-Silver-1%EB%AC%B8%EC%A0%9C-%EB%B0%B1%EC%A4%80-%ED%8C%8C%EC%9D%B4%EC%8D%AC-2178-%EB%AF%B8%EB%A1%9C-%ED%83%90%EC%83%89)
+
 import sys
 from collections import deque
 
