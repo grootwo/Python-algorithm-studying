@@ -1,7 +1,7 @@
 # 1697
 # 숨바꼭질
 
-n, k = map(int, input().split())
+now, end = map(int, input().split())
 
 count = 0
 
