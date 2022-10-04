@@ -7,6 +7,7 @@ test_case = int(input())
 kx = [1, 1, -1, -1, 2, 2, -2, -2] # knight의 x 이동 범위
 ky = [2, -2, 2, -2, 1, -1, 1, -1] # knight의 y 이동 범위
 
+
 def bfs(x1, y1, x2, y2, square):
     queue = deque()
     queue.append((x1, y1))
