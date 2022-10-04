@@ -41,4 +41,5 @@ for i in range(test_case):
     graph = [[None] * square for i in range(square)]
     start_x, start_y = map(int, input().split())
     end_x, end_y = map(int, input().split())
+    graph[start_x][start_y] = 0
     print(bfs(start_x, start_y, end_x, end_y, square))
