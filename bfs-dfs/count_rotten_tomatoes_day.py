@@ -13,20 +13,13 @@ for i in range(col):
 mx = [1, -1, 0, 0]
 my = [0, 0, 1, -1]
 
-# 1: 익은 토마토, 0: 안 익은 토마토, -1: 토마토 없음
-# 저장될 때부터 모든 토마토가 익었으면 0, 토마토가 모두 익지 못하면 -1
-
 def count_tomato(graph):
     # 익은 토마토 찾기
     for i in range(col):
         for j in range(row):
             # 토마토가 익었다면
             if graph[i][j] == 1:
-                graph = bfs_tomato(i, j, graph)
-    # 토마토 상자 확인
-    print("------0")
-    for i in range(col):
-        print(graph[i])
+                bfs_tomato(i, j)
     # 토마토가 익었는지 확인하기
     max_day = 0
     for i in range(col):
@@ -39,7 +32,7 @@ def count_tomato(graph):
     return max_day - 1
 
 
-def bfs_tomato(x, y, graph):
+def bfs_tomato(x, y):
     queue = deque()
     queue.append((x, y))
     while queue:
@@ -47,15 +40,18 @@ def bfs_tomato(x, y, graph):
         for i in range(4):
             nx = x + mx[i]
             ny = y + my[i]
-            # 토마토 판 안의 좌표이고 토마토가 있다면,
-            if 0 <= nx < row and 0 <= ny < col and graph[nx][ny] != -1:
-                if graph[nx][ny] > graph[x][y] + 1:
+            # 토마토 판 안의 좌표이고, 토마토가 있다면
+            if 0 <= nx < col and 0 <= ny < row and graph[nx][ny] != -1:
+                # 토마토가 익지 않았다면
+                if graph[nx][ny] == 0:
                     graph[nx][ny] = graph[x][y] + 1
-                    queue.append(nx, ny)
-    # 토마토 상자 확인
-    print("------1")
-    for i in range(col):
-        print(graph[i])
+                    queue.append((nx, ny))
+                # 더 짧은 날에 익을 수 있다면
+                elif graph[nx][ny] > graph[x][y] + 1:
+                    graph[nx][ny] = graph[x][y] + 1
+                    queue.append((nx, ny))
+                else:
+                    continue
     return graph
 
 
