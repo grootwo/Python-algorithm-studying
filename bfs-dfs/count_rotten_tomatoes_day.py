@@ -13,13 +13,17 @@ for i in range(col):
 mx = [1, -1, 0, 0]
 my = [0, 0, 1, -1]
 
+# 토마토를 탐색할 좌표 큐
+queue = deque()
+
 def count_tomato(graph):
     # 익은 토마토 찾기
     for i in range(col):
         for j in range(row):
             # 토마토가 익었다면
             if graph[i][j] == 1:
-                bfs_tomato(i, j)
+                queue.append((i, j))
+    bfs_tomato()
     # 토마토가 익었는지 확인하기
     max_day = 0
     for i in range(col):
@@ -32,9 +36,7 @@ def count_tomato(graph):
     return max_day - 1
 
 
-def bfs_tomato(x, y):
-    queue = deque()
-    queue.append((x, y))
+def bfs_tomato():
     while queue:
         x, y = queue.popleft()
         for i in range(4):
