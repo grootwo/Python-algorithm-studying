@@ -23,9 +23,9 @@ def bfs_ladder_game():
         for i in range(1, 7):
             next = now + i
             # 만약 다음 좌표가 인덱스 범위를 충족한다면
-            if 0 <= next < 100:
+            if 0 <= next < 101:
                 # 만약 사다리나 뱀이 존재한다면
-                if next in map_dic == True:
+                if next in map_dic:
                     next = map_dic.get(next)
                 # 처음 방문한다면
                 if graph[next] == 0:
@@ -37,5 +37,4 @@ def bfs_ladder_game():
                     queue.append(next)
     return graph[100]
 
-print(graph)
 print(bfs_ladder_game())
