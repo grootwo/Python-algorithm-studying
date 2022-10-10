@@ -2,11 +2,11 @@
 # 토마토
 from collections import deque
 
-row, col = map(int, input().split())
+row, col, height = map(int, input().split())
 
 # 토마토 상자 그리기
 graph = []
-for i in range(col):
+for i in range(col * height):
     graph.append(list(map(int, input().split())))
 
 # 동서남북 이동 좌표
@@ -18,7 +18,7 @@ queue = deque()
 
 def count_tomato(graph):
     # 익은 토마토 찾기
-    for i in range(col):
+    for i in range(col * height):
         for j in range(row):
             # 토마토가 익었다면
             if graph[i][j] == 1:
@@ -26,7 +26,7 @@ def count_tomato(graph):
     bfs_tomato()
     # 토마토가 익었는지 확인하기
     max_day = 0
-    for i in range(col):
+    for i in range(col * height):
         for j in range(row):
             # 하나라도 안 익은 토마토가 있다면
             if graph[i][j] == 0:
@@ -39,11 +39,18 @@ def count_tomato(graph):
 def bfs_tomato():
     while queue:
         x, y = queue.popleft()
-        for i in range(4):
-            nx = x + mx[i]
-            ny = y + my[i]
+        for i in range(6):
+            # 위 좌표 이동
+            if i == 4:
+                nx = x + row
+            # 아래 좌표 이동
+            elif i == 5:
+                nx = x - row
+            else: # 동서남북 좌표 이동
+                nx = x + mx[i]
+                ny = y + my[i]
             # 토마토 판 안의 좌표이고, 토마토가 있다면
-            if 0 <= nx < col and 0 <= ny < row and graph[nx][ny] != -1:
+            if 0 <= nx < col * height and 0 <= ny < row and graph[nx][ny] != -1:
                 # 토마토가 익지 않았다면
                 if graph[nx][ny] == 0:
                     graph[nx][ny] = graph[x][y] + 1
