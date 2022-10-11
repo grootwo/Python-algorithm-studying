@@ -54,7 +54,7 @@ def bfs_tomato():
                     queue.append((nx, ny))
                 else:
                     continue
-    return graph
+    return
 
 
 print(count_tomato(graph))

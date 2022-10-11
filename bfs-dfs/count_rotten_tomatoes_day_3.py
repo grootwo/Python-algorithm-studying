@@ -24,8 +24,8 @@ def count_tomato(graph):
             if graph[i][j] == 1:
                 queue.append((i, j))
     bfs_tomato()
-    # for i in range(col * height):
-    #     print(graph[i])
+    for i in range(col * height):
+        print(graph[i])
     # 토마토가 익었는지 확인하기
     max_day = 0
     for i in range(col * height):
@@ -71,7 +71,7 @@ def bfs_tomato():
                     queue.append((nx, ny))
                 else:
                     continue
-    return graph
+    return
 
 
 print(count_tomato(graph))
