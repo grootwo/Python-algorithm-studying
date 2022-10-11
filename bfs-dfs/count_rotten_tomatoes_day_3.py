@@ -24,6 +24,8 @@ def count_tomato(graph):
             if graph[i][j] == 1:
                 queue.append((i, j))
     bfs_tomato()
+    # for i in range(col * height):
+    #     print(graph[i])
     # 토마토가 익었는지 확인하기
     max_day = 0
     for i in range(col * height):
@@ -42,10 +44,18 @@ def bfs_tomato():
         for i in range(6):
             # 위 좌표 이동
             if i == 4:
-                nx = x + row
+                # print("i == 4")
+                nx = x + col
+                ny = y
+                # print("x", x, "y", y)
+                # print("nx", nx, "ny", ny)
             # 아래 좌표 이동
             elif i == 5:
-                nx = x - row
+                # print("i == 5")
+                nx = x - col
+                ny = y
+                # print("x", x, "y", y)
+                # print("nx", nx, "ny", ny)
             else: # 동서남북 좌표 이동
                 nx = x + mx[i]
                 ny = y + my[i]
