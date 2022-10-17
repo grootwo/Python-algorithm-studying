@@ -1,5 +1,6 @@
 # 2206
 # 벽 부수고 이동하기
+import sys
 from collections import deque
 
 row, col = map(int, sys.stdin.readline().split())
@@ -8,6 +9,9 @@ graph = []
 # 미로 전개도 입력받고 그리기
 for i in range(row):
     graph.append(list(map(int, input())))
+
+# 시작점 초기화
+graph[0][0] = 1
 
 # 동서남북 확인 좌표
 # 남, 동쪽으로 먼저 확인
@@ -26,10 +30,13 @@ def bfs(x, y):
             if nx < 0 or nx >= row or ny < 0 or ny >= col:
                 continue
             # 만약 길이 아니라면
-            if graph[nx][ny] == 0:
+            if graph[nx][ny] == 1:
                 continue
             # 만약 길이라면
-            if graph[nx][ny] == 1:
+            if graph[nx][ny] == 0:
                 graph[nx][ny] = graph[x][y] + 1
                 queue.append((nx, ny))
     return graph[row - 1][col - 1]
+
+
+print(bfs(0, 0))
