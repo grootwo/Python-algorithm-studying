@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f622f499-c3c1-4db3-9498-cd65436db7b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/print_chess_pieces.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/print_jesus_year.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/print_multiply_process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/print_result.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/print_sprout.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../greedy/lost_parenthesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/../greedy/lost_parenthesis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
