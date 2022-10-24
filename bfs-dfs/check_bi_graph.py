@@ -9,6 +9,7 @@ def bfs(x, index):
     while queue:
         x, index = queue.popleft()
         visited[x] = True
+        # 기록할 이분 그래프 인덱스
         if index == 0:
             index_next = 1
         else:
