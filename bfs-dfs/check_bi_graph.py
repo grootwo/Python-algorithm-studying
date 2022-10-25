@@ -24,6 +24,10 @@ def check_bi_graph():
     for j in graph_bi[0]:
         if j in graph_bi[1]:
             return False
+    # 만약 그래프가 이어져 있지 않아서 방문되지 않았다
+    for j in range(1, len(visited) + 1):
+        if visited[j] is False:
+            return False
     return True
 
 
