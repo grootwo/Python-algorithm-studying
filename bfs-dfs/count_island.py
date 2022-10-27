@@ -10,14 +10,11 @@ dy = [0, 0, 1, -1, -1, 1, 1, -1]
 def dfs(x, y):
     # 방문한 노드는 0으로 바꿔줌
     graph[x][y] = 0
-    # for k in graph:
-    #     for l in k:
-    #         print(l, end="")
-    #     print()
+    # 현재 노드 기준으로 동서남북, 대각선으로 이동
     for k in range(8):
         nx = x + dx[k]
         ny = y + dy[k]
-        if 0 <= nx < height and 0 <= ny < height:
+        if 0 <= nx < height and 0 <= ny < width:
             if graph[nx][ny] == 1:
                 dfs(nx, ny)
 
@@ -25,7 +22,6 @@ def dfs(x, y):
 width, height = map(int, input().split())
 
 while width != 0 and height != 0:
-    print("width:", width, "height:", height)
     graph = [[] for _ in range(height)]
     count = 0
     for i in range(height):
@@ -35,7 +31,5 @@ while width != 0 and height != 0:
             if graph[i][j] == 1:
                 dfs(i, j)
                 count += 1
-    for i in range(height):
-        print(graph[i])
     print(count)
     width, height = map(int, input().split())
