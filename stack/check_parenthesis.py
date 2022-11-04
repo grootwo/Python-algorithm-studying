@@ -31,5 +31,6 @@ def check_VPS(string):
 case = int(input())
 
 for i in range(case):
-  answer = intput().strip()
+  answer = input().strip()
   print(check_VPS(answer))
+  stack.clear()
