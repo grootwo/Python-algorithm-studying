@@ -17,3 +17,5 @@ static_price, variable_price, cost = map(int, input().split())
 
 # static_price + variable_price* >= cost*
 # 이 *를 찾아야 함
+# static_price / (cost - variable_price) =< *
+
