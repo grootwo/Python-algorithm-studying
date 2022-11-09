@@ -16,25 +16,25 @@ def pop():
 def check_VPS_in_string(string):
     #print(string)
     for i in string:
-        #print('i:', i)
+        print('i:', i)
         if i == '(' or '[':
-            #print(1)
+            print(1)
             push(i)
         elif i == ')':
-            #print(") rec")
+            print(") rec")
             if stack.pop() != '(':
                 #print(2)
                 return 'no'
         elif i == ']':
-            #print("] rec")
+            print("] rec")
             if stack.pop() != '[':
-                #print(3)
+                print(3)
                 return 'no'
         else:
             continue
     # 모든 문자를 읽었는데 '('나 '['가 남아 있다면
     if len(stack) != 0:
-        #print(4)
+        print(4)
         return 'no'
     else:
         return 'yes'
