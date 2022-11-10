@@ -8,10 +8,12 @@ nums_list = [int(input()) for _ in range(case)]
 stack = []
 
 def push(x):
+    print('+')
     stack.append(x)
 
 
 def pop():
+    print('-')
     return stack.pop()
 
 
@@ -24,4 +26,9 @@ def top():
 # 수열의 인덱스
 list_i = 0
 for i in range(1, case + 1):
-    
+    if i == nums_list[list_i]:
+        push(i)
+        pop()
+        list_i += 1
+    else:
+        push(i)
