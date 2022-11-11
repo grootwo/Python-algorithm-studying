@@ -22,12 +22,9 @@ def top():
         return stack[len(stack) - 1]
     else:
         return -1
-# 자신의 순서라면 pop()
-# 할 수 있는 경우:
-#   1. 제일 마지막 원소가 해당 순서
 
-# 수열의 인덱스
-list_i = 0
+
+list_i = 0 # 수열의 인덱스
 for i in range(1, case + 1):
     if top() == nums_list[list_i]:
         pop()
@@ -41,3 +38,4 @@ for i in range(1, case + 1):
 
 # 수열의 인덱스가 바뀔 때마다 스택의 top, 오름차순의 순서를 확인해야 함
 # 만약 수열의 인덱스 수가 top이 아닌 스택에 있다면 그것은 불가능함
+# 수열의 인덱스가 남아있을 때까지 반복문을 돌려야 함
