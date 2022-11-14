@@ -24,17 +24,21 @@ def top():
         return -1
 
 
-list_i = 0 # 수열의 인덱스
-for i in range(1, case + 1):
-    if top() == nums_list[list_i]:
-        pop()
-        list_i += 1
-    if i == nums_list[list_i]:
-        push(i)
-        pop()
-        list_i += 1
-    else:
-        push(i)
+num = 1
+for i in nums_list:
+    while True:
+        # top에 수열의 인덱스에 해당하는 수가 있다면
+        if top() == i:
+            pop()
+            break
+        # 오름차순의 수가 수열의 인덱스에 해당하는 수라면
+        if num == i:
+            push(num)
+            pop()
+            num += 1
+            break
+        push(num)
+        num += 1
 
 # 수열의 인덱스가 바뀔 때마다 스택의 top, 오름차순의 순서를 확인해야 함
 # 만약 수열의 인덱스 수가 top이 아닌 스택에 있다면 그것은 불가능함
