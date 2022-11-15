@@ -37,18 +37,14 @@ def empty():
 
 def front():
     if len(queue) != 0:
-        x = queue.popleft()
-        print(x)
-        queue.appendleft(x)
+        print(queue[0])
     else:
         print(-1)
 
 
 def back():
     if len(queue) != 0:
-        x = queue.pop()
-        print(x)
-        queue.append(x)
+        print(queue[-1])
     else:
         print(-1)
 
