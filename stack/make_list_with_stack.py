@@ -25,24 +25,7 @@ def top():
         return -1
 
 
-num = 1
-for i in nums_list:
-    while True:
-        # top에 수열의 인덱스에 해당하는 수가 있다면
-        if top() == i:
-            pop()
-            break
-        # 오름차순의 수가 수열의 인덱스에 해당하는 수라면
-        if num == i:
-            push(num)
-            pop()
-            num += 1
-            break
-        push(num)
-        num += 1
-        if num == case + 1:
-            command_list.append('NO')
-            break
+
 
 if command_list.count('NO') != 0:
     print('NO')
