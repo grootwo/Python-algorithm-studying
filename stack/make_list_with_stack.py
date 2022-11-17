@@ -3,10 +3,14 @@
 
 case = int(input())
 
-nums_list = [int(input()) for _ in range(case)]
+nums_list = []
+for i in range(case):
+    nums_list.append(int(input()))
 
 stack = []
 command_list = [] # 명령어 저장 리스트
+check = True # 가능 여부 체크 변수
+
 
 def push(x):
     stack.append(x)
@@ -14,8 +18,11 @@ def push(x):
 
 
 def pop():
-    command_list.append('-')
-    return stack.pop()
+    if len(stack) != 0:
+        command_list.append('-')
+        return stack.pop()
+    else:
+        return -1
 
 
 def top():
@@ -25,9 +32,28 @@ def top():
         return -1
 
 
+num = 1
+for i in nums_list:
+    # 만약 불가능하다면 반복문 종료
+    if check is False:
+        break
+    while check is True:
+        if num < i:
+            push(num)
+            num += 1
+        elif num == i:
+            push(num)
+            pop()
+            num += 1
+            break
+        else:
+            if pop() != i:
+                check = False
+            else:
+                break
 
 
-if command_list.count('NO') != 0:
+if check is False:
     print('NO')
 else:
     for i in command_list:
