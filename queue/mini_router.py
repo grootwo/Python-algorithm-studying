@@ -15,10 +15,14 @@ queue = deque([])
 answer = int(input())
 while answer != -1:
     if answer > 0:
-        queue.append(answer)
+        if len(queue) < buffer_limit:  
+          queue.append(answer)
     elif answer == 0:
         queue.popleft()
     answer = int(input())
 
-for i in queue:
-    print(i, ' ', end="")
+if len(queue) != 0:
+    for i in queue:
+        print(i, ' ', end="")
+else:
+    print('empty')
