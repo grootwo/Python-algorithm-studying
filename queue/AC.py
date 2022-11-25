@@ -41,15 +41,12 @@ for i in range(case):
         print('[', end='')
         while nums_queue:
             if len(nums_queue) > 1:
-                print(nums_queue.popleft(), ',', end='')
+                print(nums_queue.popleft(), end='')
+                print(',', end='')
             else:
-                print(num_queue.popleft(), end='')
+                print(nums_queue.popleft(), end='')
         #for j in range(len(nums_queue)):
         #    print(nums_queue[j], end='')
         #    if j != len(nums_queue) - 1:
         #        print(',', end='')
         print(']')
-    # 데이터 초기화
-    nums_list.clear()
-    nums_queue.clear()
-    # 만약에 리스트가 비어지면 어떻게 출력하지?
