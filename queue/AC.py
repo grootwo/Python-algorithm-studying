@@ -7,17 +7,10 @@ case = int(input())
 
 
 def R(array):
-    array.reverse()
-    return array
-
+    # editting
 
 def D(array):
-    if len(array) != 0:
-        array.popleft()
-        return array
-    else:
-        print('error')
-        return False
+    # editing
 
 
 for i in range(case):
