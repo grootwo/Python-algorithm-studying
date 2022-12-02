@@ -18,8 +18,10 @@ def check_same(graph):
     return True
 
 
-graph1 = graph[2:4]
-for i in range(len(graph1)):
-    graph1[i] = graph1[i][2:4]
-print(graph1)
-print(check_same(graph1))
+# que에 리스트를 넣는다
+# 그 리스트를 확인한다
+# 만약 모두 같지 않다면 분할하여 큐에 넣는다
+# 만약 리스트의 원소가 하나라면 최소이니 더 이상 분할하지 않는다
+
+que = deque([])
+
