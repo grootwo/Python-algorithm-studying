@@ -3,6 +3,7 @@
 import sys
 from collections import deque
 
+input = sys.stdin.readline
 buffer_limit = int(input())
 
 queue = deque([])
@@ -15,7 +16,7 @@ while answer != -1:
         queue.popleft()
     answer = int(input())
 
-if len(queue) != 0:
+if queue:
     for i in queue:
         print(i, end=" ")
 else:
