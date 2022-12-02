@@ -18,6 +18,8 @@ def check_same(graph):
     return True
 
 
-graph1 = graph[0:2][0:2]
+graph1 = graph[2:4]
+for i in range(len(graph1)):
+    graph1[i] = graph1[i][2:4]
 print(graph1)
 print(check_same(graph1))
