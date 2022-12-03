@@ -15,7 +15,7 @@ def check_same(graph):
     check_num = graph[0][0]
     for i in range(len(graph)):
         for j in range(len(graph[0])):
-            if check_num != i:
+            if check_num != graph[i][j]:
                 return -1
     if check_num == 0:
         return 0
@@ -33,26 +33,19 @@ que = deque([])
 que.append(graph)
 while que:
     check_list = que.popleft()
-    print('---------')
-    print(check_list)
     length = len(check_list)
-    print('len', length)
     if length == 1: # 만약 원소가 최소라면
-        if check_list.pop() == 0:
+        num = check_list.pop()
+        if num[0] == 0:
             count_0 += 1
-            print('0++')
         else:
             count_1 += 1
-            print('1++')
     else: # 만약 2차원 리스트라면
         check = check_same(check_list)
-        print('check', check)
         if check == 0:
             count_0 += 1
-            print('0++')
         elif check == 1:
             count_1 += 1
-            print('1++')
         else:
             if length != 1:
                 next_length = int(length / 2)
@@ -75,10 +68,6 @@ while que:
                 for j in range(next_length):
                     temp_list4[j] = temp_list4[j][next_length:length]
                 que.append(temp_list4)
-                print('1', temp_list1)
-                print('2', temp_list2)
-                print('3', temp_list3)
-                print('4', temp_list4)
 
 print(count_0)
 print(count_1)
