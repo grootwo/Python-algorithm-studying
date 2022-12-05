@@ -46,6 +46,7 @@ while que:
             if length != 1:
                 next_length = int(length / 2)
                 temp_list1 = check_list[0:next_length]
+                # 2사분면
                 for j in range(next_length):
                     temp_list1[j] = temp_list1[j][0:next_length]
                 que.append(temp_list1)
