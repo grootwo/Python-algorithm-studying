@@ -11,7 +11,6 @@ count_1 = 0
 
 
 def count_or_cut_paper(x, y, n):
-    global count_minus_1, count_0, count_1
     num = graph[x][y]
     for i in range(x, x+n):
         for j in range(y, y+n):
