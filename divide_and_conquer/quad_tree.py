@@ -4,7 +4,6 @@ import sys
 
 n = int(input())
 graph = list(sys.stdin.readline().rstrip() for _ in range(n))
-print(graph)
 
 
 def print_or_cut(x, y, n):
