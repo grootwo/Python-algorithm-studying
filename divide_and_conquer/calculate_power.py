@@ -8,8 +8,13 @@ num, power_num, divider = map(int, sys.stdin.readline().split())
 que = deque([num for _ in range(power_num)])
 
 
-while len(que) != 1:
-    for i in range(floor(len(que) / 2)):
-        que[i] *= que.pop()
+def power(a, b):
+    if b == 1:
+        return a
+    if b % 2 == 0:
+        return power(a, b//2) ** 2
+    else:
+        return (power(a, b//2) ** 2) * a
 
-print(que.popleft() % divider)
+
+print(power(num, power_num) % divider)
