@@ -3,16 +3,15 @@
 import sys
 
 num, power_num, divider = map(int, sys.stdin.readline().split())
-que = deque([num for _ in range(power_num)])
 
 
-def power(a, b):
+def power(a, b, c):
     if b == 1:
-        return a
+        return a % c
     if b % 2 == 0:
-        return power(a, b//2) ** 2
+        return (power(a, b//2, c) ** 2) % c
     else:
-        return (power(a, b//2) ** 2) * a
+        return ((power(a, b // 2, c) ** 2) * a) % c
 
 
-print(power(num, power_num) % divider)
+print(power(num, power_num, divider))
