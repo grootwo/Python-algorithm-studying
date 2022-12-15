@@ -1,9 +1,10 @@
 # 2751
 # 수 정렬하기 2
+import sys
 
-count = int(input())
+count = int(sys.stdin.readline())
 
-nums = [int(input()) for _ in range(count)]
+nums = [int(sys.stdin.readline()) for _ in range(count)]
 nums.sort()
 
 for i in nums:
