@@ -11,7 +11,7 @@ def get_mean(nums):
     sum = 0
     for i in nums:
         sum += i
-    mean = int(sum / len(nums))
+    mean = round(sum / len(nums))
     return mean
 
 
