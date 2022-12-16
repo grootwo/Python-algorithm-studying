@@ -16,14 +16,19 @@ def get_mean(nums):
 
 
 def get_median(nums):
-    return nums[len(nums) / 2 + 1]
+    return nums[round(len(nums) / 2)]
 
 
 def get_mode(nums):
-    count = 0
+    max_count = 0
     check = []
-    # for i in range(len(nums)):
-    #     if nums.count()
+    for i in range(len(nums)):
+        if nums[i] not in check and nums.count(i) >= max_count:
+            max_count = nums.count(i)
+            check.append(nums[i])
+        else:
+            continue
+
 
 
 def get_scope(nums):
@@ -31,3 +36,6 @@ def get_scope(nums):
 
 
 print(get_mean(nums))
+print(get_median(nums))
+# print(get_mode())
+print(get_scope(nums))
