@@ -20,7 +20,6 @@ def get_median(nums):
 
 
 def get_mode(nums):
-    max_count = 0
     check = []
     i = 0
     while i < len(nums):
