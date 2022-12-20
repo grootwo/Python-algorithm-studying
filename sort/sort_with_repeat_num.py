@@ -1,6 +1,6 @@
 # 10989
 # 수 정렬하기 3
-# 참고(https://pacific-ocean.tistory.com/67)
+# 참고(https://yoonsang-it.tistory.com/49)
 import sys
 
 n = int(sys.stdin.readline())
