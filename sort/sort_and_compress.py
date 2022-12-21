@@ -14,4 +14,7 @@ nums_sort.sort()
 
 for i in range(n):
     index = nums_sort.index(nums[i])
-    print(index, end=' ')
+    if i != len(nums) - 1:
+        print(index, end=' ')
+    else:
+        print(index)
