@@ -29,11 +29,11 @@ def get_mode(nums):
             # 초기화
             max_num = [nums[i]]
         elif max_count == count:
-            max_num.append(nums[i])
+            if nums[i] not in max_num:
+                max_num.append(nums[i])
         else:
             continue
     max_num.sort()
-    # print(max_num)
     if len(max_num) != 1:
         return max_num[1]
     else:
