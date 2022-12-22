@@ -20,18 +20,24 @@ def get_median(nums):
 
 
 def get_mode(nums):
-    check = []
-    i = 0
-    while i < len(nums):
-        num = nums[i]
-        count = nums.count(num)
-        check.append([num, count]) # 수와 해당 수의 개수를 저장
-        i += count # 셈이 중복되지 않도록
-    check.sort(key=lambda x:(-x[1], x[0]))
-    if len(check) >= 2 and check[0][1] == check[1][1]: # 만약 원소가 2개 이상이고, 빈도수가 같은 원소가 있다면
-        return check[1][0] # 두 번째로 작은 수를 리턴
+    max_count = nums.count(nums[0])
+    max_num = [nums[0]]
+    for i in range(1, len(nums)):
+        count = nums.count(nums[i])
+        if max_count < count:
+            max_count = count
+            # 초기화
+            max_num = [nums[i]]
+        elif max_count == count:
+            max_num.append(nums[i])
+        else:
+            continue
+    max_num.sort()
+    # print(max_num)
+    if len(max_num) != 1:
+        return max_num[1]
     else:
-        return check[0][0]
+        return max_num[0]
 
 
 def get_scope(nums):
