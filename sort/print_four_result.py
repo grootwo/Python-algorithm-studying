@@ -1,6 +1,7 @@
 # 2108
 # 통계학
 import sys
+from collections import Counter
 
 n = int(sys.stdin.readline())
 nums = [int(sys.stdin.readline()) for _ in range(n)]
@@ -20,24 +21,11 @@ def get_median(nums):
 
 
 def get_mode(nums):
-    max_count = nums.count(nums[0])
-    max_num = [nums[0]]
-    for i in range(1, len(nums)):
-        count = nums.count(nums[i])
-        if max_count < count:
-            max_count = count
-            # 초기화
-            max_num = [nums[i]]
-        elif max_count == count:
-            if nums[i] not in max_num:
-                max_num.append(nums[i])
-        else:
-            continue
-    max_num.sort()
-    if len(max_num) != 1:
-        return max_num[1]
+    nums_counter = Counter(nums).most_common()
+    if len(nums_counter) > 1 and nums_counter[0][1] == nums_counter[1][1]:
+        return nums_counter[1][0]
     else:
-        return max_num[0]
+        return nums_counter[0][0]
 
 
 def get_scope(nums):
