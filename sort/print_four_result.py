@@ -17,7 +17,7 @@ def get_mean(nums):
 
 
 def get_median(nums):
-    return nums[round(len(nums) / 2)]
+    return nums[len(nums) // 2]
 
 
 def get_mode(nums):
