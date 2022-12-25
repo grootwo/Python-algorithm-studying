@@ -26,6 +26,8 @@ for l in range(power - 1):
             mat_temp[i][j] = mat_result[i][j]
     for i in range(n):
         print(*mat_temp[i])
+    for i in range(n):
+        print(*mat[i])
 
 for i in range(n):
     print(*mat_result[i])
