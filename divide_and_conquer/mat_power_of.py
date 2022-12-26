@@ -15,19 +15,21 @@ for l in range(power - 1):
     # 곱셈 한 번 실행
     for i in range(n):
         for j in range(n):
+            mat_result[i][j] = 0
             for k in range(n):
-                mat_result[i][j] += mat_temp[i][k] * mat[k][j]
-    print(l, '-----------')
-    for i in range(n):
-        print(*mat_result[i])
+                mat_result[i][j] += mat[i][k] * mat_temp[k][j]
+            mat_result[i][j] = mat_result[i][j] % 1000
+    # print(l, '-----------')
+    # for i in range(n):
+    #     print(*mat_result[i])
     # temp에 result값 옮겨주기
     for i in range(n):
         for j in range(n):
             mat_temp[i][j] = mat_result[i][j]
-    for i in range(n):
-        print(*mat_temp[i])
-    for i in range(n):
-        print(*mat[i])
+    # for i in range(n):
+    #     print(*mat_temp[i])
+    # for i in range(n):
+    #     print(*mat[i])
 
 for i in range(n):
     print(*mat_result[i])
