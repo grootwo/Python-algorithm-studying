@@ -14,26 +14,15 @@ nums_counter = Counter(list_n)
 
 
 def binary_search(start, end, num):
-    # print('start, end, num:', start, end, num)
-    if start == end:
-        if num == int(list_n[start]):
-            print(nums_counter[num], end=' ')
-            return
-        else:
-            print(0, end=' ')
-            return
-    elif start > end:
-        print(0, end=' ')
-        return
-    else:
-        mid = (end + start) // 2
-        # print('mid num:', mid, list_n[mid])
-        if num == int(list_n[mid]):
-            print(nums_counter[num], end=' ')
-        elif num > int(list_n[mid]):
-            binary_search(mid + 1, end, num)
-        elif num < int(list_n[mid]):
-            binary_search(start, mid - 1, num)
+    if start > end:
+        return 0
+    mid = (end + start) // 2
+    if num == int(list_n[mid]):
+        return nums_counter[num]
+    elif num > int(list_n[mid]):
+        return binary_search(mid + 1, end, num)
+    elif num < int(list_n[mid]):
+        return binary_search(start, mid - 1, num)
 
 for i in list_m:
-    binary_search(0, len(list_n), i)
+    print(binary_search(0, len(list_n) - 1, i), end=" ")
