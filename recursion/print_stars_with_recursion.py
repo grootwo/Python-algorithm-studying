@@ -23,4 +23,6 @@ def divide_and_get_star(row, col, length):
 
 divide_and_get_star(0, 0, n)
 for i in range(n):
-    print(*graph[i])
+    for j in range(n):
+        print(graph[i][j], end="")
+    print()
