@@ -11,17 +11,14 @@ cables.sort()
 # 가장 작은 케이블을 선택한다
 min_cable = cables[0]
 
-# 그 케이블을 cm 단위로 배열을 만든다
-cable_cm = [False] * (min_cable + 1)
-
 # 이분 탐색으로 적절한 cm를 찾는다
 def find_max_cable():
     # print("--------")
     # print("find")
     # 첫 가능
-    temp = binary_search(1, len(cable_cm))
+    temp = binary_search(1, min_cable)
     # print("temp:", temp)
-    for i in range(temp + 1, len(cable_cm)):
+    for i in range(temp + 1, min_cable):
         if is_adequate_cable(i) == -1:
             return i - 1
 
