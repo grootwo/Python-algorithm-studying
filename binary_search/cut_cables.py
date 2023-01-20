@@ -1,15 +1,17 @@
 # 1654
 # 랜선 자르기
 import sys
+sys.setrecursionlimit(10 ** 6)
 
 k, n = map(int, sys.stdin.readline().split())
 cables = [int(sys.stdin.readline()) for _ in range(k)]
 
-# 케이블을 정렬한다
-cables.sort()
-
 # 가장 작은 케이블을 선택한다
 min_cable = cables[0]
+for i in range(1, len(cables)):
+    if min_cable > cables[i]:
+        min_cable = cables[i]
+
 
 # 이분 탐색으로 적절한 cm를 찾는다
 def find_max_cable():
