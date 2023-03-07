@@ -1,24 +1,30 @@
 # 9935
 # 문자열 폭발
+from collections import deque
 
 strings = input()
-string_list = list(strings)
-popping_string = input()
+int_list = list(strings)
+popping_string = list(input())
+last_ch = popping_string[-1]
 
-# 필요한 기능 pop, push, 확인
-# 고민인데, 이걸 하나하나씩 확인하면 시간 초과이지 않을까?
-# 그래도 해야지
+que = deque([])
 
-popping_length = len(popping_string)
+for i in range(len(int_list)):
+    if int_list[i] == last_ch and len(que) >= len(popping_string) - 1: # 폭발 문자의 마지막 글자와 같고, 앞의 인덱스를 확일할 정도의 길이가 된다면
+        # 확인하기
+        check = False
+        for j in range(1, len(popping_string)):
+            if que[len(que) - j] != popping_string[len(popping_string) - 1 - j]:
+                break
+        else:
+            check = True
+        if check is True:
+            for j in range(len(popping_string) - 1):
+                que.pop()
+    else:
+        que.append(int_list[i])
 
-exists = True
-
-print(strings, string_list, popping_string)
-
-while exists:
-    if len(string_list) < popping_length:
-        break
-    for i in range(0, len(string_list) - popping_length):
-        if string_list[i:(i+popping_length)] == popping_string:
-            print("exists")
-    exists = False
+if que:
+    print("".join(que))
+else:
+    print("FRULA")
