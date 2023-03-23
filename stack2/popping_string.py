@@ -18,7 +18,6 @@ for i in range(len(int_list)):
                 break
         else:
             check = True
-        # print("check:", check)
         if check is True: # 폭발 문자와 같다면 삭제
             for j in range(len(popping_string) - 1):
                 que.pop()
@@ -26,7 +25,6 @@ for i in range(len(int_list)):
             que.append(int_list[i])
     else:
         que.append(int_list[i])
-    # print(que)
 
 if que:
     print("".join(que))
