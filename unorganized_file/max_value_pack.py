@@ -28,7 +28,7 @@ things.sort(key=lambda x: (-x[1], x[0]))
 max_value_value = get_max_value()
 # print(max_value_value)
 
-# kg 기준 겅렬
+# kg 기준 정렬
 things.sort(key=lambda x: (x[0], -x[1]))
 # print(things)
 max_value_kg = get_max_value()
