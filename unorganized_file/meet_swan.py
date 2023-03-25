@@ -30,12 +30,9 @@ def melt_ice():
                 lake_graph[nr][nc] = "."
 
 
-# 지나간 길은 표시해야 한다
-# 백조가 모두 L로 표시된다
 def can_meet(swan_r, swan_c):
     visited = [[0] * col for _ in range(row)]
     visited[swan_r][swan_c] = 1
-    print(visited)
     que = deque()
     que.append([swan_r, swan_c])
     while que:
@@ -44,15 +41,34 @@ def can_meet(swan_r, swan_c):
             nr = dr[i] + r
             nc = dc[i] + c
             if 0 <= nr < row and 0 <= nc < col and visited[nr][nc] == 0:
-                for j in range(len(visited)):
-                    print(*visited[j])
-                print("-----")
                 if lake_graph[nr][nc] == ".":
                     que.append([nr, nc])
                     visited[nr][nc] = 1
                 elif lake_graph[nr][nc] == "L":
+                    # for j in range(len(visited)):
+                    #     print(*visited[j])
+                    # print("-----")
                     return True
+    # for j in range(len(visited)):
+    #     print(*visited[j])
+    # print("-----")
     return False
 
 
+check = False
+for r in range(row):
+    if check is True:
+        break
+    for c in range(col):
+        if lake_graph[r][c] == "L":
+            swan_r = r
+            swan_c = c
+            check = True
+            break
+
 count_day = 0
+while can_meet(swan_r, swan_c) is False:
+    melt_ice()
+    count_day += 1
+
+print(count_day)
