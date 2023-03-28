@@ -10,8 +10,8 @@ check = 0
 
 def factorial(num):
     global check
-    print("num and check", num, check)
-    if check >= k:
+    # print("num and check", num, check)
+    if check >= k - 1:
         return num
     check += 1
     if num == 1:
@@ -20,5 +20,8 @@ def factorial(num):
         return factorial(num - 1) * num
 
 
-result = int(factorial(n) / factorial(k)) % 1000000007
-print(result)
+result = int(factorial(n))
+check = 0
+result /= int(factorial(k))
+result %= 1000000007
+print(int(result))
