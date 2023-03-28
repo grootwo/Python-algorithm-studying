@@ -5,23 +5,14 @@ import sys
 sys.setrecursionlimit(10**6)
 
 n, k = map(int, input().split())
-check = 0
 
+result_n = 1
+for i in range(k):
+    result_n *= (n - i)
 
-def factorial(num):
-    global check
-    # print("num and check", num, check)
-    if check >= k - 1:
-        return num
-    check += 1
-    if num == 1:
-        return 1
-    else:
-        return factorial(num - 1) * num
+result_k = 1
+for i in range(k):
+    result_k *= (k - i)
 
-
-result = int(factorial(n))
-check = 0
-result /= int(factorial(k))
-result %= 1000000007
+result = int(result_n / result_k) % 1000000007
 print(int(result))
