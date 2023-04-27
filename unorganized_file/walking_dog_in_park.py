@@ -47,13 +47,15 @@ def solution(park, routes):
                 if park[now_r][j] == "X":
                     print("find X in col route")
                     loop_continue = True
+                    break
         else:
             for j in range(now_r + 1, next_r + 1):
+                print(park[j][now_c])
                 if park[j][now_c] == "X":
                     print("find X in row route")
                     loop_continue = True
+                    break
         if loop_continue is True:
-            print("find X in root")
             continue
         now_c = next_c
         now_r = next_r
