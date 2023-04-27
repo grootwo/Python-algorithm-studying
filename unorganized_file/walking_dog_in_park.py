@@ -33,20 +33,23 @@ def solution(park, routes):
             next_r = now_r - block
             change_check = 0
         print("-------------------")
-        print("[", next_r, ",", next_c, "]")
+        print("now: [", now_r, ",", now_c, "]")
+        print("next: [", next_r, ",", next_c, "]")
+        # check range
         if next_r < 0 or row <= next_r or next_c < 0 or col <= next_c:
             print("out of range")
             continue
         loop_continue = False
-        # how notice that obstacles are in load
+        # check X
         if change_check:
-            for j in range(now_c + 1, next_c):
+            for j in range(now_c + 1, next_c + 1):
+                print(park[now_r][j])
                 if park[now_r][j] == "X":
                     print("find X in col route")
                     loop_continue = True
         else:
-            for j in range(now_r + 1, next_r):
-                if park[j][now_r] == "X":
+            for j in range(now_r + 1, next_r + 1):
+                if park[j][now_c] == "X":
                     print("find X in row route")
                     loop_continue = True
         if loop_continue is True:
