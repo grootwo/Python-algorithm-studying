@@ -5,6 +5,8 @@ def solution(picks, minerals):
     # priority que will be good
     # because have to use priority
     # count each mines
+    if sum(picks) * 5 < len(minerals):
+        minerals = minerals[:sum(picks) * 5]
     minerals_count = []
     for i in range(0, len(minerals) // 5):
         print(i)
