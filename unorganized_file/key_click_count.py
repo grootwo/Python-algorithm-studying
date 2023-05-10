@@ -1,3 +1,6 @@
+# Lv.1
+# 대충 만든 자판
+
 def solution(keymap, targets):
     min_key_dic = {}
     # 각 글자다마 최소 클릭 횟수 계산 및 저장
@@ -24,13 +27,3 @@ def solution(keymap, targets):
         total_count.append(count)
     answer = total_count
     return answer
-
-
-# keymap = ["AGZ", "BSSS"]
-# targets = ["ASA","BGZ"]
-# print(solution(keymap, targets))
-#
-# ["ABACD", "BCEFD"]	["ABCD","AABB"]	[9, 4]
-# ["AA"]	["B"]	[-1]
-# ["AGZ", "BSSS"]	["ASA","BGZ"]	[4, 6]
-# ["AA"]	["B"]	[-1]

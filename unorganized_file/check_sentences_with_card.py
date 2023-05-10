@@ -1,3 +1,6 @@
+# Lv.1
+# 카드 뭉치
+
 def solution(cards1, cards2, goal):
     index_1 = 0
     index_2 = 0
@@ -15,11 +18,3 @@ def solution(cards1, cards2, goal):
     else:
         answer = 'No'
     return answer
-
-# cards1 = ["i", "water", "drink"]
-# cards2 = ["want", "to"]
-# goal = ["i", "want", "to", "drink", "water"]
-# print(solution(cards1, cards2, goal))
-#
-# # ["i", "drink", "water"]	["want", "to"]	["i", "want", "to", "drink", "water"]	"Yes"
-# # ["i", "water", "drink"]	["want", "to"]	["i", "want", "to", "drink", "water"]	"No"
