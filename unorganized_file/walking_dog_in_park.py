@@ -1,3 +1,6 @@
+# 공원 산책
+# Lv.1
+
 def solution(park, routes):
     # define map
     row = len(park)
