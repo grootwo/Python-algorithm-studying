@@ -1,4 +1,5 @@
 # 추억 점수
+# Lv.1
 
 def solution(name, yearning, photo):
     # 사람별 추억 지수 사전에 저장
