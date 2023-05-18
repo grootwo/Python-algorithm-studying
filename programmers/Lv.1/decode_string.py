@@ -1,3 +1,6 @@
+# Lv.1
+# 둘 만의 암호
+
 def solution(s, skip, index):
     answer = []
     for cha in s:
@@ -5,7 +8,7 @@ def solution(s, skip, index):
         check = 1
         i = 1
         while check <= index:
-            if now_i + i > 122:
+            if now_i + i > 122: # 만약 z 다음이라면 다시 a로
                 i -= 26
             next_cha = chr(now_i + i)
             if next_cha in skip:
@@ -15,5 +18,5 @@ def solution(s, skip, index):
                 i += 1
                 check += 1
         answer.append(chr(now_i + i - 1))
-    answer = ''.join(answer)
+    answer = ''.join(answer) # string으로 변환
     return answer
