@@ -1,4 +1,5 @@
 def solution(board):
+    # 출발 지점 찾기
     check = False
     for i in range(len(board)):
         if check is True:
@@ -10,6 +11,7 @@ def solution(board):
                 check = True
     dx = [0, 0, 1, -1]
     dy = [1, -1, 0, 0]
+    # 로봇이 목적지에 도착할 수 있는지 확인
     can_arrive = False
     for i in range(len(board)):
         if can_arrive is True:
