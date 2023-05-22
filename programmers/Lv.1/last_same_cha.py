@@ -1,3 +1,5 @@
+# Lv.1
+# 가장 가까운 같은 글자
 def solution(s):
     last_location_dic = {}
     answer = []
