@@ -1,11 +1,9 @@
 # Lv.2
 # 점 찍기
+import math
 def solution(k, d):
-    result = []
+    result = 0
     for i in range(0, d + 1, k):
-        for j in range(0, d + 1, k):
-            if i ** 2 + j ** 2 <= d ** 2:
-                # print(i, j)
-                result.append((i, j))
-    answer = len(result)
+        result += math.floor(math.sqrt(d ** 2 - i ** 2)) // k + 1
+    answer = result
     return answer
