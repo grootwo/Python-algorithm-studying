@@ -4,5 +4,8 @@ def solution(number, limit, power):
         for num in range(1, number + 1):
             if num % i == 0:
                 answer[num - 1] += 1
-    print(answer)
-    return answer
+    for i in range(number):
+        if answer[i] > limit:
+            answer[i] = power
+    # print(answer)
+    return sum(answer)
