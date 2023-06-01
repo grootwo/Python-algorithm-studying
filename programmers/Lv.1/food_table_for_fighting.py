@@ -1,3 +1,5 @@
+# Lv.1
+# 푸드 파이트 대회
 def solution(food):
     food_table = []
     for i in range(len(food)):

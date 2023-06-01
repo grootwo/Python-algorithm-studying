@@ -1,3 +1,5 @@
+# Lv.1
+# 햄버거 만들기
 from collections import deque
 def solution(ingredient):
     que = deque([])
