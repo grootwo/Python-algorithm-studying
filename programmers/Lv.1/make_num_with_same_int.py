@@ -9,7 +9,10 @@ def solution(X, Y):
     if same_int:
         same_int.sort()
         same_int.reverse()
-        answer = ''.join(same_int)
+        if same_int[0] == "0":
+            answer = "0"
+        else:
+            answer = ''.join(same_int)
     else:
         answer = "-1"
     return answer
