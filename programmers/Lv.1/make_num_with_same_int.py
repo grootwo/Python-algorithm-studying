@@ -1,18 +1,18 @@
+from collections import Counter
 def solution(X, Y):
-    same_int = []
-    X = list(X)
-    Y = list(Y)
-    for i in X:
-        if i in Y:
-            same_int.append(i)
-            Y.remove(i)
-    if same_int:
-        same_int.sort()
-        same_int.reverse()
-        if same_int[0] == "0":
-            answer = "0"
-        else:
-            answer = ''.join(same_int)
-    else:
-        answer = "-1"
+    same_num = []
+    X = Counter(X)
+    Y = Counter(Y)
+    print(X)
+    print(Y)
+    for num in X:
+        if num in Y:
+            if X[num] > Y[num]:
+                same_num.append([num, Y[num]])
+            else:
+                same_num.append([num, X[num]])
+    print(same_num)
+    # same_num.sort(key=lambda x: (-x[0]))
+    # print(same_num)
+    answer = ''
     return answer
