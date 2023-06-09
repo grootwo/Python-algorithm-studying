@@ -1,3 +1,5 @@
+# Lv.1
+# 신고 결과 받기
 def solution(id_list, report, k):
     user_report_dic = {}
     # 각 유저의 이메일 개수 초기화하기
