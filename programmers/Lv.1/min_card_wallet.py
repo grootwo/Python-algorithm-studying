@@ -1,3 +1,5 @@
+# Lv.1
+# 최소직사각형
 def solution(sizes):
     max_w = 0
     max_h = 0
