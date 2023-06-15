@@ -16,8 +16,7 @@ def solution(s):
     que = deque(s)
     while que:
         if ord(que[0]) >= 97:
-            print(que[0:3])
-            cha = count_dic[que[0:3]]
+            cha = count_dic[collections.deque(itertools.islice(que, 0, 3))]
             for i in range(cha[0]):
                 que.popleft()
             answer += cha[1]
