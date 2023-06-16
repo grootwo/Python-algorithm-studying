@@ -1,4 +1,7 @@
+# Lv.1
+# 숫자 문자열과 영단어
 from collections import deque
+# key: '앞에서 세 글자', value: [총 글자 개수, '숫자']
 def solution(s):
     count_dic = {
         'zer': [4, '0'],
@@ -15,7 +18,7 @@ def solution(s):
     answer = ''
     que = deque(s)
     while que:
-        if ord(que[0]) >= 97:
+        if ord(que[0]) >= 97: # 영단어라면
             temp = ''
             for i in range(3):
                 temp += que[i]
@@ -23,7 +26,7 @@ def solution(s):
             for i in range(cha[0]):
                 que.popleft()
             answer += cha[1]
-        else:
+        else: # 숫자라면
             answer += que.popleft()
     answer = int(answer)
     return answer
