@@ -1,3 +1,4 @@
+# Lv.1
 # 바탕화면 정리
 def solution(wallpaper):
     row = len(wallpaper)
