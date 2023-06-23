@@ -2,14 +2,14 @@
 # 햄버거 만들기
 from collections import deque
 def solution(ingredient):
-    que = deque([])
+    stack = deque([])
     count = 0
     for ing in ingredient:
-        que.append(ing)
-        if que[-1] == 1 and len(que) >= 4:
-            if que[-4] == 1 and que[-3] == 2 and que[-2] == 3:
+        stack.append(ing)
+        if stack[-1] == 1 and len(stack) >= 4:
+            if stack[-4] == 1 and stack[-3] == 2 and stack[-2] == 3:
                 for i in range(4):
-                    que.pop()
+                    stack.pop()
                 count += 1
     answer = count
     return answer
