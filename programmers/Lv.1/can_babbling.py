@@ -1,3 +1,5 @@
+# Lv.1
+# 옹알이 (2)
 from collections import deque
 def solution(babbling):
     can_speak = ["aya", "ye", "woo", "ma"]
