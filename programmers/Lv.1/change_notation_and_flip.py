@@ -1,14 +1,12 @@
+# Lv.1
+# 3진법 뒤집기
 def solution(n):
-    string_n = str(n)
     answer_3 = ''
-    temp = 0
-    for i in range(len(string_n)):
-        temp *= 10
-        temp += int(string_n[i])
-        print(int(string_n[i]))
-        answer_3 += str(temp // 3)
-        temp = temp % 3
-        print('temp:', temp)
-        print('answer_3:', answer_3)
-    answer = ''
-    return answer
+    temp = n
+    while temp > 0:
+        answer_3 += str(temp % 3)
+        temp = temp // 3
+    answer_10 = 0
+    for i in range(1, len(answer_3) + 1):
+        answer_10 += int(answer_3[-i]) * (3 ** (i - 1))
+    return answer_10
