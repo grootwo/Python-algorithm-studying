@@ -1,3 +1,5 @@
+# Lv.1
+# [카카오 인턴] 키패드 누르기
 def solution(numbers, hand):
     hand_now = {'R': '#', 'L': '*'}
     nums_hand = {1: 'L', 4: 'L', 7: 'L', 3: 'R', 6: 'R', 9: 'R',
