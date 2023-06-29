@@ -5,10 +5,7 @@ def solution(numbers, hand):
     answer = ''
     for num in numbers:
         temp = nums_hand[num]
-        if temp:
-            hand_now[temp] = num
-            answer += temp
-        else:
+        if temp == None:
             l_distance = get_distance(hand_now['L'], num)
             r_distance = get_distance(hand_now['R'], num)
             if l_distance > r_distance:
@@ -20,8 +17,8 @@ def solution(numbers, hand):
                     temp = 'R'
                 else:
                     temp = 'L'
-            hand_now[temp] = num
-            answer += temp
+        hand_now[temp] = num
+        answer += temp
     return answer
 
 def get_distance(now, dest):
