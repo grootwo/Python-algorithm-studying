@@ -3,26 +3,20 @@ def solution(board, moves):
     stack = deque([])
     count = 0
     for move in moves:
-        # print("move:", move)
         doll = get_top_doll(move, board)
-        if doll == 0:
+        if doll == 0: # 만약 인형이 없다면
             break
-        # print("doll:", doll)
         stack.append(doll)
-        # print("stack:", stack)
-        while len(stack) > 1 and stack[-2] == doll:
+        while len(stack) > 1 and stack[-2] == stack[-1]: # 두 개 연속으로 같은 인형일 때
             stack.pop()
             stack.pop()
             count += 2
-            # print("pop")
-            # print("count:", count)
-            # print("stack:", stack)
     return count
 
 def get_top_doll(col, board):
     for i in range(len(board)):
         if board[i][col - 1] != 0:
             temp = board[i][col - 1]
-            board[i][col - 1] = 0
-            return temp
+            board[i][col - 1] = 0 # 뽑은 인형 제거
+            return temp # 뽑은 인형 반환
     return 0
