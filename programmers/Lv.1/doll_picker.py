@@ -1,3 +1,5 @@
+# Lv.1
+# 크레인 인형뽑기 게임
 from collections import deque
 def solution(board, moves):
     stack = deque([])
