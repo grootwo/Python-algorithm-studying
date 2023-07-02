@@ -4,7 +4,7 @@ def solution(board, moves):
     count = 0
     for move in moves:
         doll = get_top_doll(move, board)
-        if len(stack) > 1 and stack[-1] == doll:
+        if len(stack) >= 1 and stack[-1] == doll:
             stack.pop()
             count += 1
         else:
@@ -13,6 +13,6 @@ def solution(board, moves):
 
 def get_top_doll(col, board):
     for i in range(len(board)):
-        if board[i][col] != 0:
-            return board[i][col]
+        if board[i][col - 1] != 0:
+            return board[i][col - 1]
     return 0
