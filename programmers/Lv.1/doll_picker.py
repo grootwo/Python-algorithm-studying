@@ -7,7 +7,7 @@ def solution(board, moves):
     for move in moves:
         doll = get_top_doll(move, board)
         if doll == 0: # 만약 인형이 없다면
-            break
+            continue
         stack.append(doll)
         while len(stack) > 1 and stack[-2] == stack[-1]: # 두 개 연속으로 같은 인형일 때
             stack.pop()
