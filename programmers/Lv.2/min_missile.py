@@ -4,13 +4,15 @@ def solution(targets):
         print('---------')
         max_location = get_max_location(targets)
         print('max_location:', max_location)
+        print('targets:', targets)
         for target in targets:
-            if include_location(max_location, target) == 1:
+            print('- target:', target)
+            if include_location(max_location, target):
                 print('delete target:', target)
                 targets.remove(target)
-            count += 1
-            print('count:', count)
-            print(targets)
+        count += 1
+        print('count:', count)
+        print(targets)
     return count
 
 def get_max_location(locations):
@@ -22,6 +24,9 @@ def get_max_location(locations):
     return location_list.index(max(location_list))
 
 def include_location(x, location):
+    print('include_location')
     if location[0] <= x and x < location[1]:
-        return 1
-    return 0
+        print('True')
+        return True
+    print('False')
+    return False
