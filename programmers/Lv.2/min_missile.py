@@ -1,18 +1,20 @@
 def solution(targets):
     count = 0
     while targets:
-        print('---------')
+        # print('---------')
         max_location = get_max_location(targets)
-        print('max_location:', max_location)
-        print('targets:', targets)
-        for target in targets:
-            print('- target:', target)
-            if include_location(max_location, target):
-                print('delete target:', target)
-                targets.remove(target)
+        # print('max_location:', max_location)
+        # print('targets:', targets)
+        for i in range(len(targets)):
+            # print('- target:', targets[i])
+            if include_location(max_location, targets[i]):
+                # print('delete target:', targets[i])
+                targets[i][0] = 0
+                targets[i][1] = 0
+        targets = delete_targets(targets)
         count += 1
-        print('count:', count)
-        print(targets)
+        # print('count:', count)
+        # print(targets)
     return count
 
 def get_max_location(locations):
@@ -24,9 +26,19 @@ def get_max_location(locations):
     return location_list.index(max(location_list))
 
 def include_location(x, location):
-    print('include_location')
+    # print('include_location')
     if location[0] <= x and x < location[1]:
-        print('True')
+        # print('True')
         return True
-    print('False')
+    # print('False')
     return False
+
+def delete_targets(targets):
+    count = 0
+    for i in range(len(targets)):
+        if targets[i][0] == 0:
+            count += 1
+    for i in range(count):
+        targets.remove([0, 0])
+    return targets
+    
