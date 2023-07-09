@@ -1,44 +1,12 @@
 def solution(targets):
-    count = 0
-    while targets:
-        # print('---------')
-        max_location = get_max_location(targets)
-        # print('max_location:', max_location)
-        # print('targets:', targets)
-        for i in range(len(targets)):
-            # print('- target:', targets[i])
-            if include_location(max_location, targets[i]):
-                # print('delete target:', targets[i])
-                targets[i][0] = 0
-                targets[i][1] = 0
-        targets = delete_targets(targets)
-        count += 1
-        # print('count:', count)
-        # print(targets)
-    return count
+    answer = 0
+    targets.sort(key=lambda x:x[1])
+    answer = 0
+    end = -1  # 마지막으로 요격한 미사일의 x좌표
 
-def get_max_location(locations):
-    locations.sort(key=lambda x: -x[1])
-    location_list = [0] * locations[0][1]
-    for location in locations:
-        for i in range(location[0], location[1]):
-            location_list[i] += 1
-    return location_list.index(max(location_list))
+    for s, e in targets:
+        if s >= end:  # 이전에 요격한 미사일로는 현재 미사일을 요격할 수 없는 경우
+            answer += 1
+            end = e  # 현재 미사일을 요격함으로써 끝나는 지점을 업데이트
 
-def include_location(x, location):
-    # print('include_location')
-    if location[0] <= x and x < location[1]:
-        # print('True')
-        return True
-    # print('False')
-    return False
-
-def delete_targets(targets):
-    count = 0
-    for i in range(len(targets)):
-        if targets[i][0] == 0:
-            count += 1
-    for i in range(count):
-        targets.remove([0, 0])
-    return targets
-    
+    return answer
