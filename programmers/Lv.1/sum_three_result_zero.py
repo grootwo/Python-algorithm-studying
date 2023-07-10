@@ -8,5 +8,4 @@ def solution(number):
             for k in range(j + 1, length):
                 if number[i] + number[j] + number[k] == 0:
                     count += 1
-    answer = count
-    return answer
+    return count
