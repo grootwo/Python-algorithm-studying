@@ -1,11 +1,10 @@
 def solution(n, lost, reserve):
-    count = len(lost)
-    for i in lost:
-        if i - 1 in reserve:
-            reserve.remove(i - 1)
-            count -= 1
-        elif i + 1 in reserve:
-            reserve.remove(i + 1)
-            count -= 1
-    answer = n - count
-    return answer
+    count = 0
+    for num in lost:
+        if num - 1 in reserve:
+            reserve.remove(num - 1)
+            count += 1
+        elif num + 1 in reserve:
+            reserve.remove(num + 1)
+            count += 1
+    return n - len(lost) + count
