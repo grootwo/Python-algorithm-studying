@@ -10,4 +10,5 @@ def solution(answers):
         if answer == answer_dic['2'][i % 10]:
             scores[2] += 1
     print(scores)
+    print(scores.index(max(scores)))
     return scores
