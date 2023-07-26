@@ -9,6 +9,12 @@ def solution(answers):
             scores[1] += 1
         if answer == answer_dic[2][i % 10]:
             scores[2] += 1
-    print(scores)
-    print(scores.index(max(scores)))
-    return scores
+    max_count = scores.count(max(scores))
+    answer = []
+    if max_count != 1:
+        for i in range(len(scores)):
+            if scores[i] == max(scores):
+                answer.append(i + 1)
+    else:
+        answer.append(scores.index(max(scores)) + 1)
+    return answer
