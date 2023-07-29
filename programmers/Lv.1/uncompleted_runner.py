@@ -1,7 +1,6 @@
+from collections import Counter
 def solution(participant, completion):
-    for name in participant:
-        if name not in completion:
-            return name
-        else:
-            completion.remove(name)
-    return completion[0]
+    all_runner = Counter(participant + completion)
+    for runner in all_runner.keys():
+        if all_runner[runner] % 2 != 0:
+            return runner
