@@ -8,3 +8,5 @@ def solution(numbers):
             if num not in answer:
                 answer.append(num)
     return sorted(answer)
+    # from itertools import combinations
+    # return sorted(set(sum(i) for i in list(combinations(numbers, 2))))
