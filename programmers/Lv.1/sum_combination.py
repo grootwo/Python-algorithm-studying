@@ -7,5 +7,4 @@ def solution(numbers):
             num = numbers[i] + numbers[j]
             if num not in answer:
                 answer.append(num)
-    answer.sort()
-    return answer
+    return sorted(answer)
