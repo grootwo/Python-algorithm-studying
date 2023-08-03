@@ -31,8 +31,3 @@ def get_distance(now, dest): # 현재 손의 위치에서 목적지 키의 거�
     now_r, now_c = nums_location[now][0], nums_location[now][1]
     dest_r, dest_c = nums_location[dest][0], nums_location[dest][1]
     return abs(dest_r - now_r) + abs(dest_c - now_c)
-    
-    now_r, now_c = nums_location[now][0], nums_location[now][1]
-    dest_r, dest_c = nums_location[dest][0], nums_location[dest][1]
-    return abs(dest_r - now_r) + abs(dest_c - now_c)
-    
