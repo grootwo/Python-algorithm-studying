@@ -1,3 +1,5 @@
+# Lv.1
+# 실패율
 def solution(N, stages):
     failure_rate = {}
     stages_len = len(stages)
