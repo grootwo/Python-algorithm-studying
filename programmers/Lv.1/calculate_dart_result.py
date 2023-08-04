@@ -1,3 +1,5 @@
+# Lv.1
+# [1차] 다트 게임
 def solution(dartResult):
     answer = ['', '', '']
     check = -1
