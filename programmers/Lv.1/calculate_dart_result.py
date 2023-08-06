@@ -1,41 +1,27 @@
 # Lv.1
 # [1차] 다트 게임
-from collections import deque
 def solution(dartResult):
     answer = ['', '', '']
-    sqr_dic = {'S': '**1', 'D': '**2', 'T': '**3'}
-    check = -1
-    dartResult = deque(dartResult)
-    while dartResult:
-        # 정수라면
-        if dartResult[0] + dartResult[1] == '10':
-            temp = int(dartResult[0] + dartResult[1])
-            dartResult.popleft()
-            dartResult.popleft()
-            check += 1
-            answer[check] += temp
-        elif '0' <= dartResult[0] <= '9':
-            temp = dartResult[0]
-            dartResult.popleft()
-            check += 1
-            answer[check] += temp
+    flag = -1
+    now_i = 0
+    last_i = 0
+    # 점수와 추가 옵션 나눠서 저장
+    while now_i < len(dartResult):
+        if dartResult[now_i:now_i+2] == '10':
+            flag += 1
+            answer[flag] += 10
+            last_i = now_i + 1
+            now_i += 2
+            if flag:
+                answer[flag - 1].append(dartResult[last_i + 1:now_i])
+        elif '0' <= dartResult[now_i] <= '9':
+            flag += 1
+            answer[flag] += int(dartResult[now_i])
+            last_i = now_i
+            now_i += 1
+            if flag:
+                answer[flag - 1].append(dartResult[last_i + 1:now_i])
         else:
-            dartResult.popleft()
-        if check >= len(dartResult):
-            break
-        # # 보너스라면
-        # elif i == 'S' or i == 'D' or i == 'T':
-        #     print('2')
-        #     answer[check] += sqr_dic[i]
-        # # 옵션이라면
-        # else:
-        #     print('3')
-        #     if i == '#':
-        #         answer[check] += '*-1'
-        #     elif i == '*' and check > 0:
-        #         answer[check] += '*2'
-        #         answer[check - 1] += '*2'
-        #     else:
-        #         answer[check] += '*2'
+            continue
     print(answer)
-    return answer
+    return 0
