@@ -1,3 +1,5 @@
+# Lv.1
+# 행렬의 덧셈
 def solution(arr1, arr2):
     col = len(arr1[0])
     row = len(arr1)
