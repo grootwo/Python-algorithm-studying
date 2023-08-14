@@ -1,4 +1,5 @@
 def solution(n):
+    n = n % 1234567
     return get_fibo(n) % 1234567
 
 def get_fibo(n):
