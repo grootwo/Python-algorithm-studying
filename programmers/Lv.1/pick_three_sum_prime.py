@@ -1,9 +1,8 @@
 from itertools import combinations
 def solution(nums):
-    nums = sorted(set(sum(i) for i in list(combinations(nums, 3))))
     count = 0
-    for num in nums:
-        count += is_prime(num)
+    for i in combinations(nums, 3):
+        count += is_prime(sum(i))
     return count
 
 def is_prime(num):
