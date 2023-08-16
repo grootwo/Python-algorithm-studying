@@ -1,3 +1,5 @@
+# Lv.1
+# 소수 만들기
 from itertools import combinations
 def solution(nums):
     count = 0
