@@ -1,5 +1,4 @@
+# Lv.1
+# 자연수 뒤집어 배열로 만들기
 def solution(n):
-    answer = list(str(n))
-    answer.reverse()
-    answer = [int(cha) for cha in answer]
-    return answer
+    return list(map(int, reversed(str(n))))
