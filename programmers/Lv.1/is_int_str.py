@@ -1,5 +1,5 @@
 def solution(s):
     for i in s:
-        if !int(i):
+        if '0' > i or '9' < i:
             return False
     return True
