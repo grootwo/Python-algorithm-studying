@@ -1,3 +1,5 @@
+# Lv.1
+# K번째수
 def solution(array, commands):
     answer = []
     for command in commands:
