@@ -1,3 +1,5 @@
+# Lv.1
+# 체육복
 def solution(n, lost, reserve):
     set_reserve = set(reserve) - set(lost)
     set_lost = set(lost) - set(reserve)
