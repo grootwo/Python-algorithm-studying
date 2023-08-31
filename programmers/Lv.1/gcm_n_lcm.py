@@ -1,4 +1,4 @@
-# Lv.2
+# Lv.1
 # 최대공약수와 최소공배수
 def solution(n, m):
     answer = [0, 0]
