@@ -1,3 +1,5 @@
+# Lv.1
+# 이상한 문자 만들기
 def solution(s):
     strings = list(map(list, s.split(' ')))
     for string in strings:
