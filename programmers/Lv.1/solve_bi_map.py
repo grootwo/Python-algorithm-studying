@@ -2,11 +2,10 @@ def solution(n, arr1, arr2):
     for i in range(n):
         arr1[i] = get_bi_str(arr1[i], n)
         arr2[i] = get_bi_str(arr2[i], n)
-    result = ['' * n]
-    print(result)
+    result = [''] * n
     for i in range(n):
         for j in range(n):
-            if arr1[i][j] == 0 and arr2[i][j] == 0:
+            if arr1[i][j] == '0' and arr2[i][j] == '0':
                 result[i] += ' '
             else:
                 result[i] += '#'
