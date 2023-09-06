@@ -1,3 +1,5 @@
+# Lv.1
+# [1차] 비밀지도
 def solution(n, arr1, arr2):
     for i in range(n):
         arr1[i] = get_bi_str(arr1[i], n)
