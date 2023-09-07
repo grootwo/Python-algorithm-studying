@@ -1,3 +1,5 @@
+# Lv.1
+# 2016년
 def solution(a, b):
     days = get_days_btw(a, b)
     days_dic = {0: 'FRI', 1: 'SAT', 2: 'SUN', 3: 'MON', 4: 'TUE', 5: 'WED', 6: 'THU'}
