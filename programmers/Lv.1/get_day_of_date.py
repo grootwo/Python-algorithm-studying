@@ -1,12 +1,12 @@
 def solution(a, b):
-    days_dic = {0: 'FRI', 1: 'SAT', 2: 'SUN', 3: 'MON', 4: 'TUE', 5: 'WED', 6: 'THU'}
     days = get_days_btw(a, b)
+    days_dic = {0: 'FRI', 1: 'SAT', 2: 'SUN', 3: 'MON', 4: 'TUE', 5: 'WED', 6: 'THU'}
     answer = days_dic[days % 7]
     return answer
 
 def get_days_btw(month, day):
     month_dic = {
-        1: 30,
+        1: 31,
         2: 29,
         3: 31,
         4: 30,
