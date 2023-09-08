@@ -14,8 +14,6 @@ def solution(dartResult):
                 i += 1
             flag += 1
             answer[flag] += temp
-            print('i', i)
-            print('temp', temp)
         elif dartResult[i] == 'S' or dartResult[i] == 'D' or dartResult[i] == 'T': # 보너스일 경우
             bonus = dartResult[i]
             if bonus == 'D':
@@ -23,7 +21,15 @@ def solution(dartResult):
             elif bonus == 'T':
                 answer[flag] **= 3
             i += 1
-        else:
+        else: # 옵션일 경우
+            option = dartResult[i]
+            if option == '*':
+                temp = flag - 1
+                while temp <= flag:
+                    if temp > -1:
+                        answer[temp] *= 2
+                    temp += 1
+            elif option == '#':
+                answer[flag] *= -1
             i += 1
-    print(answer)
-    return 0
+    return sum(answer)
