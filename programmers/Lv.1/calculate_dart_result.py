@@ -1,27 +1,22 @@
 # Lv.1
 # [1차] 다트 게임
 def solution(dartResult):
-    answer = ['', '', '']
+    answer = [0, 0, 0]
     flag = -1
-    now_i = 0
-    last_i = 0
-    # 점수와 추가 옵션 나눠서 저장
-    while now_i < len(dartResult):
-        if dartResult[now_i:now_i+2] == '10':
+    i = 0
+    while i < len(dartResult):
+        if '0' <= dartResult[i] <= '9': # 점수일 경우
+            if dartResult[i:i + 2] == '10':
+                temp = 10
+                i += 2
+            else:
+                temp = int(dartResult[i])
+                i += 1
             flag += 1
-            answer[flag] += '10'
-            last_i = now_i + 1
-            now_i += 2
-            if flag:
-                answer[flag - 1].append(dartResult[last_i + 1:now_i])
-        elif '0' <= dartResult[now_i] <= '9':
-            flag += 1
-            answer[flag] += str(int(dartResult[now_i]))
-            last_i = now_i
-            now_i += 1
-            if flag:
-                answer[flag - 1].append(dartResult[last_i + 1:now_i])
+            answer[flag] += temp
+            print('i', i)
+            print('temp', temp)
         else:
-            continue
+            i += 1
     print(answer)
     return 0
