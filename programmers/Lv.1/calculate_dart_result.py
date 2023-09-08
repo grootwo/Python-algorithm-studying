@@ -9,14 +9,14 @@ def solution(dartResult):
     while now_i < len(dartResult):
         if dartResult[now_i:now_i+2] == '10':
             flag += 1
-            answer[flag] += 10
+            answer[flag] += '10'
             last_i = now_i + 1
             now_i += 2
             if flag:
                 answer[flag - 1].append(dartResult[last_i + 1:now_i])
         elif '0' <= dartResult[now_i] <= '9':
             flag += 1
-            answer[flag] += int(dartResult[now_i])
+            answer[flag] += str(int(dartResult[now_i]))
             last_i = now_i
             now_i += 1
             if flag:
