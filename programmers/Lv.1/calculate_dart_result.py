@@ -16,6 +16,13 @@ def solution(dartResult):
             answer[flag] += temp
             print('i', i)
             print('temp', temp)
+        elif dartResult[i] == 'S' or dartResult[i] == 'D' or dartResult[i] == 'T': # 보너스일 경우
+            bonus = dartResult[i]
+            if bonus == 'D':
+                answer[flag] **= 2
+            elif bonus == 'T':
+                answer[flag] **= 3
+            i += 1
         else:
             i += 1
     print(answer)
