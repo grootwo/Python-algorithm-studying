@@ -1,7 +1,7 @@
 def solution(new_id):
     answer = get_lower_str(new_id)
     answer = remove_not_allowed_cha(answer)
-    # 3단계: 연속 . 변경
+    answer = change_continuous_dot(answer)
     # 4단계: 첫, 마지막 . 제거
     # 5단계: 빈 문자열 대체
     # 6단계: 문자열 15자로 인덱싱
@@ -23,3 +23,8 @@ def remove_not_allowed_cha(string): # 2단계: 비허용 문자 제거
         else:
             continue
     return result
+
+def change_continuous_dot(string): # 3단계: 연속 . 변경
+    while '..' in string:
+        string = string.replace('..', '.')
+    return string
