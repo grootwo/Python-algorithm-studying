@@ -3,7 +3,10 @@ def solution(new_id):
     answer = remove_not_allowed_cha(answer)
     answer = change_continuous_dot(answer)
     answer = remove_first_last_dot(answer)
-    # 6단계: 문자열 15자로 인덱싱
+    if len(answer) == 0:
+        answer = get_unblank_string(answer)
+    if len(answer) > 15:
+        answer = get_15_len_string(answer)
     # 7단계: 문자열 3자 이상으로 늘리기
     return answer
 
@@ -33,3 +36,9 @@ def remove_first_last_dot(string): # 4단계: 첫, 마지막 . 제거
 
 def get_unblank_string(string): # 5단계: 빈 문자열 대체
     return 'a'
+
+def get_15_len_string(string): # 6단계: 문자열 15자로 인덱싱
+    if string[14] != '.':
+        return string[:15]
+    else:
+        return string[:14]
