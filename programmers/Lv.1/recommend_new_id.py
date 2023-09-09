@@ -1,3 +1,5 @@
+# Lv.1
+# 신규 아이디 추천
 def solution(new_id):
     answer = get_lower_str(new_id)
     answer = remove_not_allowed_cha(answer)
