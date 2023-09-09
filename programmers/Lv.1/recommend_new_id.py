@@ -2,8 +2,7 @@ def solution(new_id):
     answer = get_lower_str(new_id)
     answer = remove_not_allowed_cha(answer)
     answer = change_continuous_dot(answer)
-    # 4단계: 첫, 마지막 . 제거
-    # 5단계: 빈 문자열 대체
+    answer = remove_first_last_dot(answer)
     # 6단계: 문자열 15자로 인덱싱
     # 7단계: 문자열 3자 이상으로 늘리기
     return answer
@@ -28,3 +27,9 @@ def change_continuous_dot(string): # 3단계: 연속 . 변경
     while '..' in string:
         string = string.replace('..', '.')
     return string
+
+def remove_first_last_dot(string): # 4단계: 첫, 마지막 . 제거
+    return string.strip('.')
+
+def get_unblank_string(string): # 5단계: 빈 문자열 대체
+    return 'a'
