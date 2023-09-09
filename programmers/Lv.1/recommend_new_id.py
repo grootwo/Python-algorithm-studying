@@ -1,18 +1,25 @@
 def solution(new_id):
-    # 1
-    new_id = list(new_id.lower())
-    # 2
-    allowed_symbols = ['-', '_', '.']
-    remove_count = 0
-    for i in range(len(new_id)):
-        cha = new_id[i]
-        cha_o = ord(cha)
-        if cha_o < 48 or 57 < cha_o < 97 or 122 < cha_o:
-            if cha not in allowed_symbols:
-                new_id[i] = 0
-                remove_count += 1
-    for i in range(remove_count):
-        new_id.remove(0)
-    # 3
-    answer = ''
+    answer = get_lower_str(new_id)
+    answer = remove_not_allowed_cha(answer)
+    # 3단계: 연속 . 변경
+    # 4단계: 첫, 마지막 . 제거
+    # 5단계: 빈 문자열 대체
+    # 6단계: 문자열 15자로 인덱싱
+    # 7단계: 문자열 3자 이상으로 늘리기
     return answer
+
+def get_lower_str(string): # 1단계: 소문자 변환
+    return string.lower()
+
+def remove_not_allowed_cha(string): # 2단계: 비허용 문자 제거
+    result = ''
+    for cha in string:
+        if cha.upper() != cha: # 소문자인지
+            result += cha
+        elif '0' <= cha <= '9': # 숫자인지
+            result += cha
+        elif cha in ['-', '_', '.']: # 해당 기호인지
+            result += cha
+        else:
+            continue
+    return result
