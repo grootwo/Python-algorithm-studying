@@ -7,7 +7,8 @@ def solution(new_id):
         answer = get_unblank_string(answer)
     if len(answer) > 15:
         answer = get_15_len_string(answer)
-    # 7단계: 문자열 3자 이상으로 늘리기
+    if len(answer) < 3:
+        answer = get_3_len_string(answer)
     return answer
 
 def get_lower_str(string): # 1단계: 소문자 변환
@@ -42,3 +43,6 @@ def get_15_len_string(string): # 6단계: 문자열 15자로 인덱싱
         return string[:15]
     else:
         return string[:14]
+    
+def get_3_len_string(string): # 7단계: 문자열 3자 이상으로 늘리기
+    return string + 'a' * (3 - len(string))
