@@ -45,4 +45,4 @@ def get_15_len_string(string): # 6단계: 문자열 15자로 인덱싱
         return string[:14]
     
 def get_3_len_string(string): # 7단계: 문자열 3자 이상으로 늘리기
-    return string + 'a' * (3 - len(string))
+    return string + string[-1] * (3 - len(string))
