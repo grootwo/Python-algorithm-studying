@@ -5,12 +5,13 @@ def solution(sequence, k):
     start_i = 0
     end_i = 1
     answers = []
-    # print(sequence[4:8]) 오류
+    # print(sequence[4:8])
     while start_i <= end_i:
+        # print(start_i, end_i, sum(sequence[start_i:end_i]))
         if sum(sequence[start_i:end_i]) == k:
-            answers.append([start_i, end_i])
+            answers.append([start_i, end_i - 1])
             start_i += 1
-        elif sum(sequence[start_i:end_i - 1]) < k:
+        elif sum(sequence[start_i:end_i]) < k:
             if end_i < len(sequence):
                 end_i += 1
             else:
