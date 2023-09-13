@@ -5,12 +5,16 @@ def solution(sequence, k):
     start_i = 0
     end_i = 1
     answers = []
+    # print(sequence[4:8]) 오류
     while start_i <= end_i:
         if sum(sequence[start_i:end_i]) == k:
-            start_i += 1
             answers.append([start_i, end_i])
-        elif sum(sequence[start_i:end_i]) < k:
-            end_i += 1
+            start_i += 1
+        elif sum(sequence[start_i:end_i - 1]) < k:
+            if end_i < len(sequence):
+                end_i += 1
+            else:
+                start_i += 1
         else:
             start_i += 1
     print(answers)
