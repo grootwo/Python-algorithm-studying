@@ -7,7 +7,6 @@ def solution(sequence, k):
     answers = []
     # print(sequence[4:8])
     while start_i <= end_i:
-        # print(start_i, end_i, sum(sequence[start_i:end_i]))
         if sum(sequence[start_i:end_i]) == k:
             answers.append([start_i, end_i - 1])
             start_i += 1
@@ -18,5 +17,7 @@ def solution(sequence, k):
                 start_i += 1
         else:
             start_i += 1
-    print(answers)
-    return 0
+    for i in range(len(answers)): # 인덱스 간의 차이 구하기
+        answers[i].append(answers[i][1] - answers[i][0])
+    answers.sort(key=lambda x: (x[2])) # 인덱스 간의 차이를 순서대로 정렬하기
+    return answers[0][0:2]
