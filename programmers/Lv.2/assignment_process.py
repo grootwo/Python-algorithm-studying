@@ -14,3 +14,7 @@ def solution(plans):
         print(hi)
         left_plans.clear()
     return 0
+
+# 다음 시간 전까지 남은 시간 계산
+# 만약 시간이 남는다면 이전에 완료하지 못한 시간 측정
+# 만약 시간이 모자라다면 완료하지 못한 시간에 추가
